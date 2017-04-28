@@ -8,6 +8,9 @@ import java.util.HashSet;
  * Created by 许家乐 on 2017/4/8.
  */
 
+ /**
+  * 双连通分量测试
+  */
 public class BiconnectedGraph {
     private static void initializeFile(Graph g) {
         Scanner in;
