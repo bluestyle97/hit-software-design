@@ -46,7 +46,7 @@ public class RedBlackTree<T extends Comparable<? super T>> {
         insertFixUp(node);
     }
 
-    public boolean delete(T key) {  //返回值待修改
+    public boolean delete(T key) {
         Node<T> node = search(key);
         if (node == null) {
             return false;
