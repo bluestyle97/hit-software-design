@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1300.0" spacing="10.0" style="-fx-background-color: skyblue;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="segmenttreedemo.demo.FxmlRectangleController">
+   <children>
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1100.0" spacing="10.0">
+         <children>
+            <TextFlow minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: cyan;" textAlignment="CENTER">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="请在下方面板（1100×660）拖曳鼠标或直接输入参数以生成矩形">
+                     <font>
+                        <Font name="Microsoft YaHei" size="24.0" />
+                     </font></Text>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TextFlow>
+            <Pane fx:id="canvasPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#handleMouseDragged" onMousePressed="#handleMousePressed" onMouseReleased="#handleMouseReleased" prefHeight="660.0" prefWidth="1100.0" style="-fx-background-color: aquamarine; -fx-border-color: cyan; -fx-border-width: 2;" />
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: lightpink;">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="100.0" text="x: " />
+                  <TextField fx:id="textFieldX" alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="0.0" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="100.0" text="y: " />
+                  <TextField fx:id="textFieldY" alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="0.0" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="100.0" text="width: " />
+                  <TextField fx:id="textFieldWidth" alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="0.0" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="100.0" text="height: " />
+                  <TextField fx:id="textFieldHeight" alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="0.0" />
+                  <Button fx:id="addButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#handleAddButtonClicked" prefHeight="30.0" prefWidth="100.0" text="添加">
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+         </children>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="160.0" spacing="10.0">
+         <children>
+            <TextFlow minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: cyan;" textAlignment="CENTER">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="求解结果">
+                     <font>
+                        <Font name="Microsoft YaHei" size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+               <effect>
+                  <DropShadow />
+               </effect></TextFlow>
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="160.0" style="-fx-background-color: lightpink;">
+               <children>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="140.0" text="矩形总数">
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin></Label>
+                  <TextField fx:id="textFieldCount" alignment="CENTER" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="140.0" text="0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="140.0" text="总面积">
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin></Label>
+                  <TextField fx:id="textFieldArea" alignment="CENTER" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="140.0" text="0.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="140.0" text="总周长">
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin></Label>
+                  <TextField fx:id="textFieldCircumference" alignment="CENTER" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="140.0" text="0.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onMouseClicked="#handleRevokeButtonClicked" prefHeight="30.0" prefWidth="100.0" text="撤销">
+                     <VBox.margin>
+                        <Insets top="140.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#handleClearButtonClicked" prefHeight="30.0" prefWidth="100.0" text="清除">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="closeButton" mnemonicParsing="false" onMouseClicked="#handleCloseButtonClicked" prefHeight="30.0" prefWidth="100.0" text="关闭">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </VBox>
+         </children>
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</HBox>
